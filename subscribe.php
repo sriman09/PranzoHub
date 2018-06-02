@@ -98,66 +98,21 @@
                      </div>
                   </div>
                   <!-- end:row -->
-                  <div class="row pricing-faq m-t-30">
-                     <div class="col-md-5 offset-md-1 col-sm-6" data-cloneable="">
-                        <div>
-                           <h3>What is a account?</h3>
-                           <p>Yeah, I like animals better than people sometimes… Especially dogs. Dogs are the best. Every time you come home, they act </p>
-                        </div>
-                        <div>
-                           <h3>Is there any fee?</h3>
-                           <p>Like they haven’t seen you in a year. And the good thing about dogs… is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man’s best friend</p>
-                        </div>
-                        <div>
-                           <h3>What payment methods are accepted?</h3>
-                           <p>Phe wrong man’s worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me… Raoul. Right, Omar? Give me Raoul.</p>
-                        </div>
-                     </div>
-                     <div class="col-md-5 col-sm-6" data-cloneable="">
-                        <div>
-                           <h3>Can I setup multiple brands in one account?</h3>
-                           <p>Like they haven’t seen you in a year. And the good thing about dogs.</p>
-                        </div>
-                        <div>
-                           <h3>Can I use Docs without the help desk?</h3>
-                           <p>You going to give me a dog for a pet, give me a pit bull. Give me… Raoul. Right, Omar? Give me Raoul.</p>
-                        </div>
-                        <div>
-                           <h3>What’s your support like?</h3>
-                           <p>Or the wrong man’s worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me… Raoul. Right, Omar? Give me Raoul.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- end:Container -->
-            </div>
-            <section class="app-section">
-               <div class="app-wrap">
-                  <div class="container">
-                     <div class="row text-img-block text-xs-left">
-                        <div class="container">
-                           <div class="col-xs-12 col-sm-6 hidden-xs-down right-image text-center">
-                              <figure> <img src="images/app.png" alt="Right Image"> </figure>
-                           </div>
-                           <div class="col-xs-12 col-sm-6 left-text">
-                              <h3>The Best Food Delivery App</h3>
-                              <p>Now you can make food happen pretty much wherever you are thanks to the free easy-to-use Food Delivery &amp; Takeout App.</p>
-                              <div class="social-btns">
-                                 <a href="#" class="app-btn apple-button clearfix">
-                                    <div class="pull-left"><i class="fa fa-apple"></i> </div>
-                                    <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">App Store</span> </div>
-                                 </a>
-                                 <a href="#" class="app-btn android-button clearfix">
-                                    <div class="pull-left"><i class="fa fa-android"></i> </div>
-                                    <div class="pull-right"> <span class="text">Available on the</span> <span class="text-2">Play store</span> </div>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
+              </div>
+            <br>
+           <br>
+           <br>
+           <br>
+           <br>
+            <br>
+           <br>
+           <br>
+           <br>
+           <br>
+            <br>
+            <?php include'module/appSection.php'; ?>
+           
+
             <!-- start: FOOTER -->
           <?php include 'common/footer.php'; ?>
             <!-- end:Footer -->
