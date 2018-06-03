@@ -18,10 +18,11 @@
 
     <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
+		
 			<?php include 'common/navbar.php'; ?>
-		</div>
+		
 	</div>
+	<br><br>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
@@ -56,7 +57,7 @@
 				Your order can't be compeleted because of an issue.
 			</h3>
             <br><br>
-			<button type="button">Retry</button>
+			 <a href="#" class="btn theme-btn">RETRY</a>
 			</center>
 		</div>
 	</div>

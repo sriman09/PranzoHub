@@ -65,7 +65,7 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
-    <script src="js/bar.js"></script>
+   
 </body>
 
 

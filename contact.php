@@ -28,18 +28,7 @@
             <!-- /.navbar -->
         </header>
         <div class="page-wrapper">
-            <!-- top Links -->
-            <div class="top-links">
-                <div class="container">
-                    <ul class="row links">
-                        <li class="col-xs-12 col-sm-3 link-item active"><span>1</span><a href="#">Choose Your Location</a></li>
-                        <li class="col-xs-12 col-sm-3 link-item"><span>2</span><a href="#">Choose Restaurant</a></li>
-                        <li class="col-xs-12 col-sm-3 link-item"><span>3</span><a href="#">Pick Your favorite food</a></li>
-                        <li class="col-xs-12 col-sm-3 link-item"><span>4</span><a href="#">Order and Pay online</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- end:Top links -->
+         
             <!-- start: Inner page hero -->
             <section class="bg-image space-md" data-image-src="images/3.jpg">
                 <div class="profile">
@@ -112,9 +101,9 @@
                         <!-- /REGISTER -->
                         <!-- WHY? -->
                         <div class="col-md-4">
-                            <h4>Get in Touch!</h4>
+                            <h4><b>Get in Touch!</b></h4>
                             <p>Feel free to get in touch, we love to talk. Can call us on coffee, we never say no to coffee.</p><br><br>
-                             <h4>The Office</h4>
+                             <h4><b>The Office</b></h4>
                              <p>Rasulgarh,Bhubaneswar<br>
                                 +91 123-456-7890<br>
                                 connect@xyz.com</p>

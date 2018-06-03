@@ -363,6 +363,7 @@ hr {
     width: 100%;
     border: 0;
     z-index: 99;
+    background-color: transparent;
 }
 
 .nav-fixed {
@@ -375,6 +376,8 @@ hr {
     background-image: url("../images/menu-bg.jpg");
     padding: .95rem 1rem;
     border-radius: 0;
+   /* opacity: 0.7;*/
+    
 }
 
 .navbar-nav .nav-item {
@@ -434,9 +437,8 @@ hr {
     border: 1px solid transparent;
     color: #f30;
     border-radius: 2px;
+
 }
-
-
 /********* top links part ***********/
 
 .top-links {
@@ -1532,11 +1534,12 @@ footer li a {
 
 .profile-banner figure img {
     width: 100%;
+
 }
 
 .image-wrap {
     border-radius: 2px;
-    padding: 10px;
+    /*padding: 10px;*/
     float: left;
     background: #fff;
 }

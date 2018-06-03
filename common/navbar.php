@@ -1,12 +1,12 @@
 <nav class="navbar navbar-dark">
-                <div class="container">
+                <div class="container" id="heroimage">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index-2.html"> <img class="img-rounded" src="images/icon.png" height="91" width="91" alt=""> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/icon.png" height="91" width="91" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="subscribe.php">Subscribe <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="#">About Us <span class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="about.php">About Us <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="contact.php">Contact Us <span class="sr-only">(current)</span></a> </li>
                              <li class="nav-item"><a href="#" class="btn theme-btn-dash" data-toggle="modal" data-target="#myModal" style="font-weight: bold;">Login/Sign Up</a></li>
 
