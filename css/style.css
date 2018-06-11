@@ -33,6 +33,14 @@ body {
     font-weight: 400;
     overflow-x: hidden;
 }
+ body.modal-open {
+    overflow-y: auto !important;
+    padding-right: 0 !important;
+}
+
+.modal-scrollbar-measure {
+    overflow: hidden;
+}
 
 
 /* ==========================
@@ -216,8 +224,15 @@ hr {
     background-color: transparent;
     color: #f30
 }
+.theme-btn-new {
+    border: 2px dashed #fff;
+    background-color: transparent;
+    color: #fff
+}
+
 
 .theme-btn-dash:hover,
+.theme-btn-new:hover,
 .theme-btn,
 .theme-btn.btn-lg:hover,
 .btn-secondary:hover {
@@ -227,9 +242,14 @@ hr {
 }
 
 .theme-btn-dash:hover {
-    border: 2px solid #f30;
+    border: 2px solid #30;
+    color: #fff;
+}
+.theme-btn-new:hover {
+    border: 2px solid #fff;
     color: #fff
 }
+
 
 .bg-white {
     background-color: #fff
@@ -373,12 +393,52 @@ hr {
 }
 
 .navbar {
-    background-image: url("../images/menu-bg.jpg");
+     
     padding: .95rem 1rem;
     border-radius: 0;
    /* opacity: 0.7;*/
-    
+
+
 }
+.navbar.drop {
+    background-image: url("../images/menu-bg.jpg");
+    /*background-color: #fff!important;*/
+    box-shadow: 0 0.15em 0.35em 0 rgba(0,0,0,0.135);
+    /*-webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);*/
+    animation-name: example;
+    animation-duration: 0.3s;
+ /*   opacity: 0.7;*/
+    top:0px;
+    height: 100px;
+    /*transition:top 0.3s;*/
+}
+
+@keyframes example {
+    0%  {opacity:0.5;}
+    5%  {opacity:0;}
+    10%  {opacity:1;top:-90px;}
+    15%  {opacity:1;top:-85px;}
+    20%  {opacity:1;top:-80px;}
+    25%  {opacity:1;top:-75px;}
+    30%  {opacity:1;top:-70px;}
+    35%  {opacity:1;top:-65px;}
+    40%  {opacity:1;top:-60px;}
+    45%  {opacity:1;top:-55px;}
+    50%  {opacity:1;top:-50px;}
+    55%  {opacity:1;top:-45px;}
+    60%  {opacity:1;top:-40px;}
+    65%  {opacity:1;top:-35px;}
+    70%  {opacity:1;top:-30px;}
+    75%  {opacity:1;top:-25px;}
+    80%  {opacity:1;top:-20px;}
+    85%  {opacity:1;top:-15px;}
+    90%  {opacity:1;top:-10px;}
+    95%  {opacity:1;top:-5px;}
+    100% {opacity:1;top:0px;}
+}
+
 
 .navbar-nav .nav-item {
     padding-left: 10px;
@@ -502,11 +562,18 @@ hr {
     position: relative;
 }
 
+
+
 .hero h1 {
     font-family: "Give You Glory", cursive;
     color: #fff;
     font-size: 3.7em;
     font-weight: 700;
+}
+.hero h6 {
+    font-family: "Give You Glory", cursive;
+    color: #fff;
+  
 }
 
 .hero:before {
@@ -901,6 +968,9 @@ hr {
 @media (min-width: 1200px) {
     ...
 }
+.hidden{
+    display: none;
+}
 
 
 /*============================================
@@ -911,6 +981,7 @@ hr {
     margin-bottom: 20px;
     border-bottom: 1px solid #ededed;
     padding: 2px 0 15px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 2, .2);
 }
 
 .cart-addon .food-item:last-of-type {
@@ -970,7 +1041,10 @@ button.close {
 button.close span {
     display: block;
 }
-
+#login-modal 
+{
+    z-index: 5;
+}
 
 /*-----------------------------------  
 How it works section
@@ -1525,8 +1599,8 @@ footer li a {
 ============================*/
 
 .inner-page-hero {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 12%;
+    padding-bottom: 10%;
 }
 
 
@@ -1534,7 +1608,14 @@ footer li a {
 
 .profile-banner figure img {
     width: 100%;
+    height: 100%
+    background:
 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    
 }
 
 .image-wrap {
@@ -1545,7 +1626,9 @@ footer li a {
 }
 
 .image-wrap figure {
-    background: #FFF;
+    background: #fff;
+
+
     border-radius: 2px;
     display: block;
     overflow: hidden;
@@ -1810,6 +1893,7 @@ footer li a {
     border-bottom: 1px solid #eaebeb;
     font-weight: 500;
     color: #414551;
+    padding: 20px;
 }
 
 .main-block ul li a {
@@ -1930,7 +2014,7 @@ a.more-link {
 }
 
 .menu-widget .food-item {
-    padding: 15px
+    padding: 30px
 }
 
 .menu-widget .food-item:first-of-type {
@@ -1958,6 +2042,10 @@ a.more-link {
 
 .menu-widget .food-item.white {
     background-color: #fff
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 2, .2);
+}
+
+
 }
 
 .menu-widget .food-item .rest-descr {
@@ -2190,6 +2278,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .pricing-box {
+    box-shadow: 5px 5px 5px 0.2px rgba(0, 0, 2, .2);
     background-color: #fcfbf9;
     border-radius: 3px;
     border: 1px solid #ededed;

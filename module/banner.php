@@ -1,4 +1,16 @@
+ <?php       //db connection
+              include 'scripts/db_connection.php';
+
+             $selectAreaQuery = "SELECT * FROM `location`";
+             $selectAreaResult = $conn->query($selectAreaQuery);
+
+            
+             ?>
+ 
+
+        
  <section class="hero bg-image" data-image-src="images/8.jpg">
+
             <div class="hero-inner">
                 <div class="container text-center hero-text font-white">
                     <h1>Order Delivery & Take-Out </h1>
@@ -8,7 +20,24 @@
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputAmount">I would like to eat....</label>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I stay at..."> </div>
+                                    <input type="text" class="form-control form-control-lg" id="" placeholder="I stay at..." list="area">
+                                    <datalist id="area">
+                                        <?php 
+                                         if ($selectAreaResult->num_rows > 0) {
+                                         // output data of each row
+                                         while($selectAreaData = $selectAreaResult->fetch_assoc()) {
+                                            ?>
+                                                                    
+                                    <option value="<?=$selectAreaData['area_name'];?>" >
+                                      <?php
+                                              }
+                                          }
+                                      ?>
+                                   
+
+                                    </datalist>
+ 
+                                </div>
                             </div>
                             <button onclick="location.href='restaurants.html'" type="button" class="btn theme-btn btn-lg">Search</button>
                         </form>

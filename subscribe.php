@@ -1,3 +1,12 @@
+<?php 
+      include 'scripts/db_connection.php';
+
+      $selectQuery = "SELECT * FROM `breakfast_details`";
+      $selectResult = $conn->query($selectQuery);
+      $i = '';
+
+?>      
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,90 +35,111 @@
             <?php include 'common/navbar.php';?>
             <!-- /.navbar -->
          </header>
-         <div class="page-wrapper">
-            <!-- top Links -->
-          <!--   <div class="top-links">
-               <div class="container">
-                  <ul class="row links">
-                     <li class="col-xs-12 col-sm-3 link-item active"><span>1</span><a href="#">Choose Your Location</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item"><span>2</span><a href="#">Choose Restaurant</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item"><span>3</span><a href="#">Pick Your favorite food</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item"><span>4</span><a href="#">Order and Pay online</a></li>
-                  </ul>
-               </div>
-            </div> -->
-            <!-- end:Top links -->
-            <!-- start: Inner page hero -->
-            <div class="inner-page-hero bg-image space-md" data-image-src="images/profile-banner.jpg">
-               <div class="container text-xs-center m-b-20">
+         
+            <div class="hero bg-image space-md" data-image-src="images/profile-banner.jpg">
+               <div class="hero-inner text-xs-center m-b-20">
                   <h1 class="font-white">Choose your Subscription</h1>
-                  <p class="font-white">Find restaurants, specials, and coupons for free</p>
+                  <p class="font-white">Monthly Basics Subscriptions at a affordiable price range</p>
                </div>
             </div>
             <!-- end:Inner page hero -->
+
             <div class="pricing-page">
+
                <div class="container">
-                  <div class="row">
+                 <div class="row">
+                    <?php
+                      for($i=0;$i<3;$i++)
+                      {
+                            if ($selectResult->num_rows > 0) {
+                                         // output data of each row
+                                         $selectData = $selectResult->fetch_assoc() 
+                                         
+                     ?>     
                      <div class="col-md-4 col-sm-6">
                         <div class="pricing-box">
                            <span class="price">
-                           <span class="currency">₹</span>900</span>
-                           <h2>Veg Breakfast</h2>
-                           <p>Sign up for free plan</p>
-                           <ul data-cloneable="" data-group="" class="">
-                              <li>No joining fees</li>
-                              <li>50 orders per month</li>
-                              <li>Get noticed</li>
-                              <li>Gain exposure</li>
-                           </ul>
-                           <div data-group=""> <a href="#" class="btn theme-btn">Subscribe</a> </div>
+                          
+                           <span class="currency">₹</span><?=$selectData['price'];?></span>
+                           <h2><?=$selectData['breakfast_name'];?></h2>
+                           
+                      
+                           <img src="<?=$selectData['photo'];?>">
+                           <div data-group=""> <a href="#" class="btn theme-btn" data-toggle="modal" data-target="#order-modal<?=$selectData['breakfast_id'];?>">Subscribe</a> </div>
                         </div>
                      </div>
-                     <div class="col-md-4  col-sm-6">
-                        <div class="pricing-box">
-                           <span class="price">
-                           <span class="currency">₹</span>900</span>
-                           <h2>Non-Veg Breakfast</h2>
-                           <p>Sign up for premium plan</p>
-                           <ul data-cloneable="" data-group="" class="">
-                              <li>No joining fees</li>
-                              <li>Unlimited orders per month</li>
-                              <li>Get noticed</li>
-                              <li>Gain exposure</li>
-                         
-                           </ul>
-                           <div data-group=""> <a href="#" class="btn theme-btn">Subscribe</a> </div>
+
+                     <!-- modal -->
+                     <div class="modal fade" style="  box-shadow: 5px 5px 5px 1px rgba(0, 0, 2, .2);" id="order-modal<?=$selectData['breakfast_id'];?>" tabindex="-1" role="dialog" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                              <div class="modal-contents">
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                                 <div class="modal-body cart-addon">
+                                    <div class="food-item white">
+                                       <div class="row">
+                                          <div class="col-xs-12 col-sm-6 col-lg-6">
+                                             <div class="item-img pull-left">
+                                                <a class="restaurant-logo pull-left" href="#"><img src="<?=$selectData['photo'];?>" alt="Food logo"></a>
+                                             </div>
+                                             <!-- end:Logo -->
+                                              
+                                             <div class="rest-descr">
+                                                <h6><a href="#"><?=$selectData['breakfast_name'];?>
+                                                </a></h6>
+                                             </div>
+                                             <!-- end:Description -->
+                                          </div>
+                                          <!-- end:col -->
+                                          <?php 
+                                          $price='';
+                                          $price=$selectData['price'];
+                                          ?>
+
+                                          <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">₹<?=$price;?>/Month</span></div>
+                                          <div class="col-xs-6 col-sm-4 col-lg-4">
+                                             <div class="row no-gutter">
+                                                <div class="col-xs-5">
+                                                 
+                                                </div>
+                                                <div class="col-xs-7">
+                                                   <B>MONTHS</B>
+                                                   <input class="form-control" type="number" value="0" id="quantity"> 
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <!-- end:row -->
+                                    </div>
+                                    <!-- end:Food item -->
+                                   
+                                    <!-- end:Food item -->
+                                    
+                                       <!-- end:row -->
+                               
+                                    <!-- end:Food item -->
+                                    
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <a href="checkout.php" class="btn theme-btn">Checkout</a>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                     </div>
-                     <div class="col-md-4  col-sm-6">
-                        <div class="pricing-box">
-                           <span class="price">
-                           <span class="currency">₹</span>300</span>
-                           <h2>Smoothies</h2>
-                           <p>Sign up for free plan</p>
-                           <ul data-cloneable="" data-group="" class="">
-                              <li>No joining fees</li>
-                              <li>50 orders per month</li>
-                              <li>Get noticed</li>
-                              <li>Gain exposure</li>
-                           </ul>
-                           <div data-group=""> <a href="#" class="btn theme-btn">Subscribe</a> </div>
-                        </div>
-                     </div>
+                       <?php }
+                    }
+                    ?>
+                      
+                    </div>
+
+
                   </div>
+
                   <!-- end:row -->
+                   
               </div>
-            <br>
-           <br>
-           <br>
-           <br>
-           <br>
-            <br>
-           <br>
-           <br>
-           <br>
-           <br>
-            <br>
+          
+
             <?php include'module/appSection.php'; ?>
            
 
@@ -130,8 +160,19 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+    <script src="js/bar.js"></script>
 </body>
 
 
 <!-- Mirrored from codenpixel.com/demo/foodpicky/pricing.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 May 2018 04:52:38 GMT -->
 </html>
+
+<!-- calculate bill -->
+<script type="text/javascript">
+  function calculateBill()
+  {
+   
+  }
+</script>
+
+<!-- fetch data -->

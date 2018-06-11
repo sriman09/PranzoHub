@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 
-<!-- Mirrored from codenpixel.com/demo/foodpicky/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 May 2018 04:51:08 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +12,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
+    <link rel="icon" href="images/icon2.png">
     <title>PranzoHub</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,9 @@
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
             <?php include 'common/navbar.php';?>
+
             <!-- /.navbar -->
+                
         </header>
         <!-- banner part starts -->
         <?php include 'module/banner.php';?>
@@ -65,7 +69,13 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
-   
+    <script src="js/bar.js"></script>
+
+
+
+      
+
+
 </body>
 
 

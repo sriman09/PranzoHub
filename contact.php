@@ -27,11 +27,10 @@
            <?php include 'common/navbar.php'; ?>
             <!-- /.navbar -->
         </header>
-        <div class="page-wrapper">
-         
+              
             <!-- start: Inner page hero -->
-            <section class="bg-image space-md" data-image-src="images/3.jpg">
-                <div class="profile">
+            <section class="hero bg-image space-md" data-image-src="images/3.jpg">
+                <div class="hero-inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12 col-sm-4  col-lg-4 profile-img">
@@ -147,6 +146,7 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+    <script src="js/bar.js"></script>
 </body>
 
 

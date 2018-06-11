@@ -18,7 +18,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet"> </head>
-<body>
+    <body onload="selectFunction()">
      <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
          <!--header starts-->
          <header id="header" class="header-scroll top-header headrom">
@@ -26,22 +26,13 @@
             <?php include 'common/navbar.php';?>
             <!-- /.navbar -->
          </header>
-         <div class="page-wrapper">
+        
             <!-- top Links -->
-            <div class="top-links">
-               <div class="container">
-                  <ul class="row links">
-                     <li class="col-xs-12 col-sm-3 link-item"><span>1</span><a href="index-2.html">Choose Your Location</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item"><span>2</span><a href="restaurants.html">Choose Restaurant</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item active"><span>3</span><a href="profile.html">Pick Your favorite food</a></li>
-                     <li class="col-xs-12 col-sm-3 link-item"><span>4</span><a href="checkout.html">Order and Pay online</a></li>
-                  </ul>
-               </div>
-            </div>
+           
             <!-- end:Top links -->
             <!-- start: Inner page hero -->
-            <section class="inner-page-hero bg-image" data-image-src="images/7.jpg">
-               <div class="profile">
+            <section class="hero bg-image" data-image-src="images/7.jpg">
+               <div class="hero-inner">
                   <div class="container">
                      <div class="row">
                         <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
@@ -50,8 +41,8 @@
                            </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
-                           <div class="pull-left right-text white-txt">
-                              <h6 style="font-size: 50px"><a href="#">PranzoHub</a></h6>
+                           <div class="pull-left right-text white-txt" style="z-index: 10">
+                              <h6 style="font-size: 50px; color: #fff"><a href="#">PranzoHub</a></h6>
                               <a class="btn btn-small btn-green">Closed</a>
                               <p>Breakfast,Launch and Dinner</p>
                               <ul class="nav nav-inline">
@@ -93,9 +84,23 @@
                               <i class="fa fa-cutlery pull-right"></i> 
                            </div>
                            <ul>
-                              <li><a href="#1" class="scroll active">Veg Breakfast</a></li>
-                              <li><a href="#2" class="scroll">Non-Veg Breakfast</a></li>
-                              <li><a href="#3" class="scroll">Smoothies</a></li>
+                                 <li><label class="custom-control custom-radio">
+                                    <input id="veg-select" name="radio" type="radio" class="custom-control-input" onclick="selectFunction()"> 
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Veg Breakfast</span> </label>
+                                 </li>    
+                                 <li> <label class="custom-control custom-radio">
+                                    <input id="nonveg-select" name="radio" type="radio" class="custom-control-input" onclick="selectFunction()"> 
+                                    <span class="custom-control-indicator"></span> 
+                                    <span class="custom-control-description">Non-Veg Breakfast</span> 
+                                    </label>
+                                 </li>
+                                 <li> <label class="custom-control custom-radio">
+                                     <input id="smoothie-select" name="radio" type="radio" class="custom-control-input" onclick="selectFunction()"> 
+                                     <span class="custom-control-indicator"></span> 
+                                     <span class="custom-control-description">Smoothies</span>
+                                     </label>
+                                 </li>
                               
                            </ul>
                            <div class="clearfix"></div>
@@ -180,8 +185,8 @@
                            </h3>
                            <div class="clearfix"></div>
                         </div>
-                        <div class="collapse in" id="1">
-                           <div class="food-item white">
+                        <div class="collapse in">
+                           <div class="food-item white hidden" id="veg">
                               <div class="row">
                                  <div class="col-xs-12 col-sm-12 col-lg-8">
                                     <div class="rest-logo pull-left">
@@ -195,12 +200,12 @@
                                     <!-- end:Description -->
                                  </div>
                                  <!-- end:col -->
-                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹900.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹900.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">Add to Cart</a> </div>
                               </div>
                               <!-- end:row -->
                            </div>
                            <!-- end:Food item -->
-                           <div class="food-item">
+                           <div class="food-item white hidden" id="nonveg">
                               <div class="row">
                                  <div class="col-xs-12 col-sm-12 col-lg-8">
                                     <div class="rest-logo pull-left">
@@ -214,7 +219,7 @@
                                     <!-- end:Description -->
                                  </div>
                                  <!-- end:col -->
-                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹900.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹900.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">Add to Cart</a> </div>
                               </div>
                               <!-- end:row -->
                            </div>
@@ -226,7 +231,7 @@
                         <!-- end:Collapse -->
                      </div>
                      <!-- end:Widget menu -->
-                     <div class="menu-widget" id="2">
+                     <div class="menu-widget" >
                         <div class="widget-heading">
                            <h3 class="widget-title text-dark">
                               Beverages<a class="btn btn-link pull-right" data-toggle="collapse" href="#popular2" aria-expanded="true">
@@ -237,7 +242,7 @@
                            <div class="clearfix"></div>
                         </div>
                         <div class="collapse in" id="popular2">
-                           <div class="food-item">
+                           <div class="food-item hidden" id="smoothie">
                               <div class="row">
                                  <div class="col-xs-12 col-sm-12 col-lg-8">
                                     <div class="rest-logo pull-left">
@@ -251,7 +256,7 @@
                                     <!-- end:Description -->
                                  </div>
                                  <!-- end:col -->
-                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹300.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> </div>
+                                 <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info"> <span class="price pull-left">₹300.00 / MONTH</span> <a href="#" class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">Add to Cart</a> </div>
                               </div>
                               <!-- end:row -->
                            </div>
@@ -511,7 +516,7 @@
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn theme-btn">Add to cart</button>
+                  <button type="button" class="btn theme-btn">Checkout</button>
                </div>
             </div>
          </div>
@@ -526,6 +531,8 @@
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/foodpicky.min.js"></script>
+    <script src="js/selection.js"></script>
+    <script src="js/bar.js"></script>
 </body>
 
 
